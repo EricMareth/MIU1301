@@ -4,7 +4,7 @@
 
 window.addEventListener("DOMContentLoaded", function(){
 	
-	function $(x){
+	function ge(x){
 		var theElement = document.getElementById(x);
 		return theElement;
 	}
@@ -13,7 +13,7 @@ window.addEventListener("DOMContentLoaded", function(){
 	// Dynamically creates drop down list for form.
 	function whatType(){					
 		var formTag = document.getElementsByTagName("form"),
-			selectLi = $('selectType'),
+			selectLi = ge('selectType'),
 			makeSelect = document.createElement('select');
 			makeSelect.setAttribute("id", "type");
 		for(i=0, j=charType.length; i<j; i++){
@@ -40,22 +40,22 @@ window.addEventListener("DOMContentLoaded", function(){
 	function toggleControls(n){
 		switch(n){
 			case "on":
-				$('charForm').style.display = "none";
-				$('clearLink').style.display = "inline";
-				$('displayData').style.display = "none";
-				$('addChar').style.display = "inline";
+				ge('charForm').style.display = "none";
+				ge('clearLink').style.display = "inline";
+				ge('displayData').style.display = "none";
+				ge('addChar').style.display = "inline";
 				break;
 			case "off":
-				$('charForm').style.display = "block";
-				$('clearLink').style.display = "inline";
-				$('displayData').style.display = "inline";
-				$('addChar').style.display = "none";			
-				$('items').style.display = "none";
+				ge('charForm').style.display = "block";
+				ge('clearLink').style.display = "inline";
+				ge('displayData').style.display = "inline";
+				ge('addChar').style.display = "none";			
+				ge('items').style.display = "none";
 
 				
 				// Added to remove "Edit to Display" display echo.
-				var body = $('body');
-				body.removeChild($('items'));
+				var body = ge('body');
+				body.removeChild(ge('items'));
 				break;
 			default:
 				return false;
@@ -83,7 +83,7 @@ window.addEventListener("DOMContentLoaded", function(){
 		var makeList = document.createElement('ul');
 		makeDiv.appendChild(makeList);
 		document.body.appendChild(makeDiv);
-		$('items').style.display = "display";
+		ge('items').style.display = "display";
 		for( i=0, length=localStorage.length; i<length; i++){
 			var makeLi = document.createElement('li');
 			var linksLi = document.createElement('li');
@@ -102,7 +102,7 @@ window.addEventListener("DOMContentLoaded", function(){
 				makeSubList.appendChild(linksLi);
 				
 				// Added to give value to the hidden input attribute.
-				$('charKey').value = key;
+				ge('charKey').value = key;
 			}
 			makeItemLinks(localStorage.key(i), linksLi);		// passing key to makeItemLinks function.
 		}
@@ -157,12 +157,12 @@ window.addEventListener("DOMContentLoaded", function(){
 		toggleControls("off");
 		
 		//populates the form fields with current localStorage values.
-		$('charName').value  = item.name[1];
-		$('taleName').value  = item.story[1];
-		$('land').value  = item.land[1];
+		ge('charName').value  = item.name[1];
+		ge('taleName').value  = item.story[1];
+		ge('land').value  = item.land[1];
 		// Checks the field state of 'land' so it knows to populate 'town'.
-		if($('land').value !== ""){
-			$('town').value  = item.town[1];
+		if(ge('land').value !== ""){
+			ge('town').value  = item.town[1];
 			townField();
 		}
 		//Checks correct radio button for edit.
@@ -176,18 +176,18 @@ window.addEventListener("DOMContentLoaded", function(){
 				radios[i].setAttribute("checked","checked");
 			}
 		}
-		$('age').value  = item.age[1];
+		ge('age').value  = item.age[1];
 		// Resets 'age' value display to current value.
 		ageNum();
-		$('type').value  = item.type[1];
-		$('details').value  = item.details[1];
-		$('created').value  = item.created[1];
-		$('charKey').value = this.key;
+		ge('type').value  = item.type[1];
+		ge('details').value  = item.details[1];
+		ge('created').value  = item.created[1];
+		ge('charKey').value = this.key;
 		
 		// remove the initial listener from the input 'save contact'
 		save.removeEventListener("click", storeData);
-		$('saveChar').value = "Edit Character";
-		var editSubmit = $('saveChar');
+		ge('saveChar').value = "Edit Character";
+		var editSubmit = ge('saveChar');
 		// Save the key value established in this function as a property of the editSubmit event
 		// so we can use that value when we save the data we edited.
 		editSubmit.addEventListener("click", validate);
@@ -224,8 +224,8 @@ window.addEventListener("DOMContentLoaded", function(){
 	// Validates that the character name and type fileds have been filled out.
 	function validate(e){		
 		//Define the elements we want to check.
-		var getName = $('charName');
-		var getType = $('type');
+		var getName = ge('charName');
+		var getType = ge('type');
 		
 		errMsg.innerHTML = "";
 		getName.style.border = "1px solid black";
@@ -272,15 +272,15 @@ window.addEventListener("DOMContentLoaded", function(){
 		};
 		getSelectedRadio();
 		var item		={};
-			item.name		=["Name:", $('charName').value];
-			item.story		=["Story:", $('taleName').value];
-			item.land		=["Land:", $('land').value];
-			item.town		=["Town:", $('town').value];
+			item.name		=["Name:", ge('charName').value];
+			item.story		=["Story:", ge('taleName').value];
+			item.land		=["Land:", ge('land').value];
+			item.town		=["Town:", ge('town').value];
 			item.gender		=["Sex:", genderVal];
-			item.age		=["Age:", $('age').value];
-			item.type		=["Character Type:", $('type').value];
-			item.details	=["Details:", $('details').value];
-			item.created	=["Birthdate:", $('created').value];
+			item.age		=["Age:", ge('age').value];
+			item.type		=["Character Type:", ge('type').value];
+			item.details	=["Details:", ge('details').value];
+			item.created	=["Birthdate:", ge('created').value];
 		
 		localStorage.setItem(id, JSON.stringify(item));
 		alert("It's ALIVE!!!!!!!! ALIIIIVE!!!!!");
@@ -290,18 +290,18 @@ window.addEventListener("DOMContentLoaded", function(){
 	// *ADDED: My EXTRA CREDIT function to add a range display.
 	function ageNum(){
 		var	ageVal = ageData.value,
-			field = $('charAge');
+			field = ge('charAge');
 		field.innerHTML = ageVal;
 	}
 	
 	// *ADDED: Activates disabled 'Town' field for population.
 	function townField(){
-		var townFld = $('town'),
-			townLbl = $('townTxt'),
+		var townFld = ge('town'),
+			townLbl = ge('townTxt'),
 			newTxt = "Town?: ",
 			dfltText = "Town (disabled): ",
 			place = townFld.setAttribute("placeholder", "Oz, Neverland, etc.");			
-		if($('land').value !== ""){
+		if(ge('land').value !== ""){
 			townLbl.style.color = "black";
 			townLbl.innerHTML = newTxt;
 			townFld.removeAttribute("disabled", "disabled");
@@ -317,24 +317,24 @@ window.addEventListener("DOMContentLoaded", function(){
 	
 	
 	var charType = ["|-Choose Character Type-|", "Hero", "Side-kick", "Love-Interest", "Mentor", "Villain", "Henchman", "Sub-Villain", "Supporting", "Walk-On", "Off-Screen"];
-	var	errMsg  = $('errors');
+	var	errMsg  = ge('errors');
 
 	whatType();
 
-	var displayData = $('displayData');
+	var displayData = ge('displayData');
 	displayData.addEventListener("click", getData);
-	var clearLink = $('clearLink');
+	var clearLink = ge('clearLink');
 	clearLink.addEventListener("click", clearLocal);
-	var save = $('saveChar');
+	var save = ge('saveChar');
 	save.addEventListener("click", validate);
 	
 	// *ADDED: My EXTRA CREDIT to add a range display.
-	var ageData = $('age');
+	var ageData = ge('age');
 	ageNum();
 	ageData.addEventListener("change", ageNum);	
 	
 	// *ADDED: Checks 'Land' field to determine active state of townField().
-	var askTown = $('land'); 
+	var askTown = ge('land'); 
 	var check = askTown.addEventListener("keypress", townField);
 	askTown.addEventListener("blur", townField);
 });
