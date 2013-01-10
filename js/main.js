@@ -1,6 +1,6 @@
-// Web App Part 4
+// Mobile App
 // Eric Mareth
-// Visual Frameworks 1212
+// Mobile Interfaces and Usability 1301
 
 window.addEventListener("DOMContentLoaded", function(){
 	

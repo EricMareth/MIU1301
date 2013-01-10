@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 
-<!-- Web App Part 4 -->
+<!-- Mobile App -->
 <!-- by Eric Mareth -->
-<!-- Visual Frameworks 1212 -->
+<!-- Mobile Interfaces and Usability 1301 -->
 
 <html style="background-size:100% 750px">
 	<head>
@@ -17,12 +17,22 @@
 	</head>
 	<body>
 		<header id="loadPage">
-			<h1 style="margin-bottom: 150px">Character Note</h1>
-			<h2>the place for</h2> 
-			<h2>character bios</h2> 
-			<h2>to live</h2>
-			<h3>Expand your universe...</h3>
-			<p><a href="additem.html" id="addLink">Create A New Character</a></p>
+			<p class="header">Character Note</p>
+			<div class="cta">
+				<p>Expand your universe...</p>
+				<p><a href="additem.html" id="addLink">Create A New Character</a></p>
+			</div>
+			<span class="titled">Browse</span>
+				<ul id="choices">
+					<li><a href="error.html" type="button" id="browseName" class= "browseButton">Character Name</a> </li>
+					<li><a href="error.html" type="button" id="browseName" class= "browseButton">Story</a></li>
+					<li><a href="error.html" type="button" id="browseName" class= "browseButton">Land</a></li>
+					<li><a href="error.html" type="button" id="browseName" class= "browseButton">Male</a></li>
+					<li><a href="error.html" type="button" id="browseName" class= "browseButton">Female</a></li>
+				</ul>
+			<div id="searchbar">
+				<label for="search" style="margin-right:10px">Search</label><input type="text" id="search" placeholder="Type your search here...">
+			</div>
 		</header>
 	</body>
 </html>
