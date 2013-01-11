@@ -17,22 +17,24 @@
 	</head>
 	<body>
 		<header id="loadPage">
-			<p class="header">Character Note</p>
+			<p class="header">Character Note</p>			
 			<div class="cta">
-				<p>Expand your universe...</p>
-				<p><a href="additem.html" id="addLink">Create A New Character</a></p>
+				<div id="searchBar">
+					<input type="text" id="searchField" placeholder="Type your search here..."/>
+					<input type="button" id="searchButton"value="Search"/>
+				</div>
+				<h3>Expand your universe...</h3>
+				<a href="additem.html" id="addLink"><input type="button" id="newEntry" value="Create A New Character"/></a>
 			</div>
 			<span class="titled">Browse</span>
 				<ul id="choices">
-					<li><a href="error.html" type="button" id="browseName" class= "browseButton">Character Name</a> </li>
-					<li><a href="error.html" type="button" id="browseName" class= "browseButton">Story</a></li>
-					<li><a href="error.html" type="button" id="browseName" class= "browseButton">Land</a></li>
-					<li><a href="error.html" type="button" id="browseName" class= "browseButton">Male</a></li>
-					<li><a href="error.html" type="button" id="browseName" class= "browseButton">Female</a></li>
+					<li><a href="error.html"><input type="button" id="browseName" class= "browseButton" value="Character Name"/></a> </li>
+					<li><a href="error.html"><input type="button" id="browseStory" class= "browseButton" value="Story"/></a></li>
+					<li><a href="error.html"><input type="button" id="browseLand" class= "browseButton" value="Land"/></a></li>
+					<li><a href="error.html"><input type="button" id="browseMale" class= "browseButton" value="Male"/></a></li>
+					<li><a href="error.html"><input type="button" id="browseFemale" class= "browseButton" value="Female"/></a></li>
 				</ul>
-			<div id="searchbar">
-				<label for="search" style="margin-right:10px">Search</label><input type="text" id="search" placeholder="Type your search here...">
-			</div>
 		</header>
+		<script type="text/javascript" src="js/main.js"></script>
 	</body>
 </html>

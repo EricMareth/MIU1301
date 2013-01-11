@@ -315,6 +315,10 @@ window.addEventListener("DOMContentLoaded", function(){
 		}
 	}
 	
+	//function getNames(){
+	
+	//}
+	
 	
 	var charType = ["|-Choose Character Type-|", "Hero", "Side-kick", "Love-Interest", "Mentor", "Villain", "Henchman", "Sub-Villain", "Supporting", "Walk-On", "Off-Screen"];
 	var	errMsg  = ge('errors');
@@ -337,4 +341,8 @@ window.addEventListener("DOMContentLoaded", function(){
 	var askTown = ge('land'); 
 	var check = askTown.addEventListener("keypress", townField);
 	askTown.addEventListener("blur", townField);
+	
+	// To direct browse buttons
+	//var findName = ge("browseName");
+	//findName.addEventListener("click", getNames);
 });
