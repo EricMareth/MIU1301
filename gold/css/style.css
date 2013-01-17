@@ -42,7 +42,11 @@ li {
 	font-size: 14px;
 }
 
+<<<<<<< HEAD
 div > ul > li {
+=======
+div > ul > li:not #info {
+>>>>>>> gh-pages
 	border: 6px groove steelBlue;
 	padding: 10px;
 	border-radius: 10px;
