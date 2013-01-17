@@ -1,0 +1,107 @@
+/* Mobile App
+by Eric Mareth
+Mobile Interfaces and Usability 1301 */
+
+
+img{
+	margin: 15px 0px 0px 10px;
+}
+
+#centerstage{
+	margin: 10px 0px;
+}
+
+*{
+	font-family: "Trebuchet MS";
+}
+
+li{
+	list-style: none;
+}
+
+
+
+html {
+	background-image: -webkit-gradient(linear,
+		0% 0%, 
+		0% 30%, 
+		from(#89622E), 
+		to(#E9D6BE));
+	background-image: -moz-linear-gradient(270deg, #89622E, #E9D6BE 30%);
+	background-image: -o-linear-gradient(270deg, #89622E, #E9D6BE 30%);
+	overflow: scroll;
+	
+}
+
+li {
+	list-style: none;
+	margin-left: -30px;
+}
+
+#newEntry{
+	font-size: 14px;
+}
+
+div > ul > li:not #info {
+	border: 6px groove steelBlue;
+	padding: 10px;
+	border-radius: 10px;
+	margin: 10px 0px;
+	background: ghostWhite;
+}
+
+li > label[for=town]{
+	color: gray;
+}
+
+div > ul{
+	list-style: none;
+	margin-left: -40px;
+}
+
+#choices{
+	margin-left: -5px
+}
+
+.titled {
+	background: steelBlue;
+	padding: 2px 245px 3px 10px;
+	border-radius: 8px;
+}
+
+#searchBar {
+	background: steelBlue;
+	padding: 2px 5px 2px 95px;
+	display: inline;
+	border-radius: 8px;	
+}
+
+.browseButton {
+	width: 280px;
+	text-align: center;
+}
+
+a{
+	padding: 8px;
+	margin:0px 2px;
+}
+
+div > p {
+	text-align: center;
+	font-size: 18px;
+}
+
+.header {
+	color: white;
+	background: steelBlue;
+	font-weight: bold;
+}
+
+.cta {
+	text-align: right;
+	background: url(Villain.png) no-repeat scroll 20px 60%, lightsteelBlue;
+	margin: 0px 0px 8px 0px;
+	padding: 0px 8px 20px 0px;
+	border-radius: 8px;	
+}
+
