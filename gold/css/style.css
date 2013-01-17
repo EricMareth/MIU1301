@@ -15,12 +15,6 @@ img{
 	font-family: "Trebuchet MS";
 }
 
-li{
-	list-style: none;
-}
-
-
-
 html {
 	background-image: -webkit-gradient(linear,
 		0% 0%, 
@@ -33,20 +27,16 @@ html {
 	
 }
 
-li {
+li{
 	list-style: none;
-	margin-left: -30px;
+	margin-left: -35px;
 }
 
 #newEntry{
 	font-size: 14px;
 }
 
-<<<<<<< HEAD
-div > ul > li {
-=======
-div > ul > li:not #info {
->>>>>>> gh-pages
+#entry{
 	border: 6px groove steelBlue;
 	padding: 10px;
 	border-radius: 10px;
@@ -58,7 +48,7 @@ li > label[for=town]{
 	color: gray;
 }
 
-div > ul{
+div > ol{
 	list-style: none;
 	margin-left: -40px;
 }
