@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<!-- Mobile App -->
+<!-- by Eric Mareth -->
+<!-- Mobile Interfaces and Usability 1301 -->
+
+<html style="background-size:100% 750px">
+	<head>
+		<meta charset="utf-8"/>
+		<meta name="description" content="A personal database of characters."/>
+		<meta name="keywords" content="character, database, note, creative, writer, actor, acting, tool"/>
+		<meta name="robots" content="index, follow"/>
+		<meta name="viewport" content="user-scalable=no, width=device-width"/>
+		<meta name="viewport" content="target-densitydpi=device-dpi"/>
+		<title>Character Note</title>
+		<link rel="stylesheet" href="css/styles.css" />
+	</head>
+	<body>
+		<header id="loadPage">
+			<p class="header">Character Note</p>			
+			<div class="cta">
+				<div id="searchBar">
+					<input type="text" id="searchField" placeholder="Type your search here..."/>
+					<input type="button" id="searchButton" value="Search"/>
+				</div>
+				<h3>Expand your universe...</h3>
+				<a href="additem.html" id="addLink"><input type="button" id="newEntry" value="Create A New Character"/></a>
+			</div>
+			<span class="titled">Browse</span>
+				<ul id="choices">
+					<li><a href="error.html"><input type="button" id="browseName" class= "browseButton" value="Character Name"/></a> </li>
+					<li><a href="error.html"><input type="button" id="browseStory" class= "browseButton" value="Story"/></a></li>
+					<li><a href="error.html"><input type="button" id="browseLand" class= "browseButton" value="Land"/></a></li>
+					<li><a href="error.html"><input type="button" id="browseMale" class= "browseButton" value="Male"/></a></li>
+					<li><a href="error.html"><input type="button" id="browseFemale" class= "browseButton" value="Female"/></a></li>
+				</ul>
+		</header>
+		<script type="text/javascript" src="js/index.js"></script>
+	</body>
+</html>

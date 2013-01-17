@@ -1,0 +1,131 @@
+<!doctype html> 
+
+<!--Mobile Application - Character Note--> 
+<!--by Eric Mareth--> 
+<!--Mobile Interfaces and Usability 1301--> 
+
+<html lang="en">
+<head>
+
+	<meta charset="utf-8">
+	
+	<title>Character Note</title>
+	
+	<!--  Mobile viewport optimized: j.mp/bplateviewport -->
+	<meta name="HandheldFriendly" content="True"/>
+	<meta name="MobileOptimized" content="320"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	
+	<!-- Mobile IE needs ClearType for smoothing fonts -->
+	<meta http-equiv="cleartype" content="on"/>
+	
+	<!-- StyleSheets under here -->
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css" />
+	<link rel="stylesheet" href="css/style.css"/>
+	
+	
+	<!-- JavaScript is normally at the end of the body, except for Modernizr which enables HTML5 elements & feature detects -->
+	<script src="js/libs/modernizr.custom.min.js"></script>
+
+</head>
+<body>
+
+<!-- Index Page :: Index Page :: Index Page :: Index Page :: Index Page :: Index Page ::-->
+
+	<div data-role="page" id="front">
+	
+		<div data-role="header" data-position="fixed" data-theme="b">
+			<h1>Character Note</h1>
+		</div>
+		
+		<div data-role="content" value="Search">
+			<ul data-role="listview" data-filter="true" >
+				<li id="centerstage">
+					<a href="additem.html" data-ajax="false">
+						<img src="images/Villain.png"/>
+						<h2>Expand Your Universe!</h2>
+						<p>Create a New Character!<p>
+					</a> 
+				</li>
+				<li data-role="list-divider" data-role="collapsible">Browse</li>
+					<li><a href="error.html" rel="external">Character Name</a></li>
+					<li><a href="error.html" rel="external">Story Name</a></li>
+					<li><a href="error.html" rel="external">Character Type</a></li>
+					<li><a href="error.html" rel="external">Male Characters</a></li>
+					<li><a href="error.html" rel="external">Female Characters</a></li>
+			</ul>
+		</div>
+		
+		<div data-role="footer" data-position="fixed" data-id="front">
+			<nav data-role="navbar">
+				<ul>
+					<li><a href="#front" data-icon="home" class="ui-btn-active ui-state-persist">Home</a></li>
+					<li><a href="#info" data-icon="info">Info</a></li>
+					<li><a href="#feed" data-icon="arrow-r">Latest Creations</a></li>
+				</ul>
+			</nav>
+		</div>
+	
+	</div>
+	
+<!-- Information Page -->	
+
+	<div data-role="page" id="info" data-add-back-btn="true">
+	
+		<div data-role="header" data-position="fixed" data-theme="b">
+			<h1>Information</h1>
+		</div>
+		
+	<!--paragraph content-->
+		<div data-role="content">
+			<div data-role="collapsible">
+				<h3>Git Links</h3>
+				<p><a href="https://www.github.com/EricMareth/MIU1301" rel="external">Main Branch</a></p>
+				<p><a href="https://www.github.com/EricMareth/MIU1301/tree/gh-pages" rel="external">GH-pages Branch</a></p>
+			</div>
+		</div>
+
+		<div data-role="footer" data-position="fixed" data-id="front">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#front" data-icon="home">Home</a></li>
+					<li><a href="#info" data-icon="info" class="ui-btn-active ui-state-persist">Info</a></li>
+					<li><a href="#feed" data-icon="arrow-r">Latest Creations</a></li>
+				</ul>
+			</div>
+		</div>
+	
+	</div>
+	
+<!-- Newsfeed Page -->
+
+	<div data-role="page" id="feed" data-add-back-btn="true">
+		
+		<div data-role="header" data-position="fixed" data-theme="b">
+			<h1> Latest Creations</h1>
+			
+		</div>
+		
+		<div>
+			<p>Newsfeed goes here...</p>
+		</div>
+	
+		<div data-role="footer" data-position="fixed" data-id="front">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#front" data-icon="home">Home</a></li>
+					<li><a href="#info" data-icon="info">Info</a></li>
+					<li><a href="#feed" data-icon="arrow-r" class="ui-btn-active ui-state-persist">Latest Creations</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+
+	<!-- JavaScript under here -->
+	<script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+
+</body>
+</html>
