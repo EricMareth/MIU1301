@@ -79,18 +79,19 @@ window.addEventListener("DOMContentLoaded", function(){
 		// Creates 'div' tag, populates it with 'ul' containing data blocks.
 		var makeDiv = document.createElement('div');
 		makeDiv.setAttribute("id","items");
-		var makeList = document.createElement('ul');
+		var makeList = document.createElement('ol');
 		makeDiv.appendChild(makeList);
 		document.body.appendChild(makeDiv);
 		ge('items').style.display = "display";
 		for( i=0, length=localStorage.length; i<length; i++){
 			var makeLi = document.createElement('li');
+			makeLi.setAttribute("id","entry");
 			var linksLi = document.createElement('li');
 			makeList.appendChild(makeLi);
 			var key = localStorage.key(i);
 			var value = localStorage.getItem(key);
 			var obj = JSON.parse(value);						
-			var makeSubList = document.createElement('ul');
+			var makeSubList = document.createElement('ol');
 			makeLi.appendChild(makeSubList);
 			getImage(obj.type[1], makeSubList);
 			for(var n in obj){

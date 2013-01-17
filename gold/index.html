@@ -34,7 +34,7 @@
 
 	<div data-role="page" id="front">
 	
-		<div data-role="header" data-position="fixed" data-theme="b">
+		<div data-role="header" data-position="fixed" data-theme="e">
 			<h1>Character Note</h1>
 		</div>
 		
@@ -47,7 +47,7 @@
 						<p>Create a New Character!<p>
 					</a> 
 				</li>
-				<li data-role="list-divider" data-role="collapsible">Browse</li>
+				<li data-role="list-divider">Browse</li>
 					<li><a href="error.html" rel="external">Character Name</a></li>
 					<li><a href="error.html" rel="external">Story Name</a></li>
 					<li><a href="error.html" rel="external">Character Type</a></li>
@@ -72,23 +72,39 @@
 
 	<div data-role="page" id="info" data-add-back-btn="true">
 	
-		<div data-role="header" data-position="fixed" data-theme="b">
+		<div data-role="header" data-position="fixed" data-theme="e">
 			<h1>Information</h1>
 		</div>
 		
 	<!--paragraph content-->
 		<div data-role="content">
-			<div data-role="collapsible">
-				<h3>Git Links</h3>
-				<p><a href="https://www.github.com/EricMareth/MIU1301" rel="external">Main Branch</a></p>
-				<p><a href="https://www.github.com/EricMareth/MIU1301/tree/gh-pages" rel="external">GH-pages Branch</a></p>
+			<div data-role="collapsible-set">
+				<div data-role="collapsible">
+					<h3>Home</h3>
+					<p>You must be lost.<a href="#front">Start Over</a></p>
+				</div>
+				
+				<div data-role="collapsible">
+					<h3>Git Links</h3>
+					<p><a href="https://www.github.com/EricMareth/MIU1301" rel="external">Main Branch</a></p>
+					<p><a href="https://www.github.com/EricMareth/MIU1301/tree/gh-pages" rel="external">GH-pages Branch</a></p>
+				</div>
+				
+				<div data-role="collapsible" data-theme="a">
+					<h3>Bronze App</h3>
+					<p>Create characters, just not as well as you can here.<a href="http://ericmareth.github.com/MIU1301/bronze/"> Go There Now</a></p>
+				</div>
+	
+				<div data-role="collapsible" data-theme="e">
+					<h3>Gold App</h3>
+					<p>You are already here, but if you want to go here, go ahead.<a href="http://ericmareth.github.com/MIU1301/gold/"> Come Here Now</a></p>
+				</div>
+	
+				<div data-role="collapsible">
+					<h3>About Me</h3>
+					<p>Well, not much to tell, I create things and keep them to myself, until I let them go, then the world is in trouble.</p>
+				</div>
 			</div>
-			
-			<div data-role="collapsible">
-				<h3>Bronze App</h3>
-				<p>Create characters, just not as well as you can here.<a href="https://github.com/EricMareth/MIU1301/blob/gh-pages/bronze/index.html"> Got there now</a></p>
-			</div>
-
 		</div>
 
 		<div data-role="footer" data-position="fixed" data-id="front">
@@ -102,20 +118,44 @@
 		</div>
 	
 	</div>
-	
 <!-- Newsfeed Page -->
 
 	<div data-role="page" id="feed" data-add-back-btn="true">
 		
-		<div data-role="header" data-position="fixed" data-theme="b">
+		<div data-role="header" data-position="fixed" data-theme="e">
 			<h1> Latest Creations</h1>
-			
 		</div>
 		
-		<div>
-			<p>Newsfeed goes here...</p>
+		<div data-role="content" id="news">
+			<ul data-role="listview">
+				<li>
+					<img src="images/Supporting.png"/>
+					<h3>Samuel</h3>
+					<p>Danala's only love, and Jacob's father.</p>
+					<p>Entered: 11/22/2012</p>
+				</li>
+				<li>
+					<img src="images/Hero.png"/>
+					<h3>Nestor</h3>
+					<p>Sea creature with a fear of deep water.</p>
+					<p>Entered: 11/18/2012</p>
+				</li>
+				<li>
+					<img src="images/Supporting.png"/>
+					<h3>Vir</h3>
+					<p>Leader of the horde that slaughtered the people of...</p>
+					<p>Entered: 11/15/2012</p>
+				</li>
+				<li>
+					<img src="images/Villain.png"/>
+					<h3>Jacob</h3>
+					<p>Danala's son.</p>
+					<p>Entered: 11/8/2012</p>
+				</li>
+				<li><a href="#">More Characters ...(disabled)</a></li>
+			</ul>
 		</div>
-	
+		
 		<div data-role="footer" data-position="fixed" data-id="front">
 			<div data-role="navbar">
 				<ul>

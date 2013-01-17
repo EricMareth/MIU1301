@@ -1,40 +1,235 @@
-<!DOCTYPE html>
+<!doctype html> 
 
-<!-- Mobile App -->
-<!-- by Eric Mareth -->
-<!-- Mobile Interfaces and Usability 1301 -->
+<!--Mobile Application - Character Note--> 
+<!--by Eric Mareth--> 
+<!--Mobile Interfaces and Usability 1301--> 
 
-<html style="background-size:100% 750px">
-	<head>
-		<meta charset="utf-8"/>
-		<meta name="description" content="A personal database of characters."/>
-		<meta name="keywords" content="character, database, note, creative, writer, actor, acting, tool"/>
-		<meta name="robots" content="index, follow"/>
-		<meta name="viewport" content="user-scalable=no, width=device-width"/>
-		<meta name="viewport" content="target-densitydpi=device-dpi"/>
-		<title>Character Note</title>
-		<link rel="stylesheet" href="css/styles.css" />
-	</head>
-	<body>
-		<header id="loadPage">
-			<p class="header">Character Note</p>			
-			<div class="cta">
-				<div id="searchBar">
-					<input type="text" id="searchField" placeholder="Type your search here..."/>
-					<input type="button" id="searchButton" value="Search"/>
-				</div>
-				<h3>Expand your universe...</h3>
-				<a href="additem.html" id="addLink"><input type="button" id="newEntry" value="Create A New Character"/></a>
-			</div>
-			<span class="titled">Browse</span>
-				<ul id="choices">
-					<li><a href="error.html"><input type="button" id="browseName" class= "browseButton" value="Character Name"/></a> </li>
-					<li><a href="error.html"><input type="button" id="browseStory" class= "browseButton" value="Story"/></a></li>
-					<li><a href="error.html"><input type="button" id="browseLand" class= "browseButton" value="Land"/></a></li>
-					<li><a href="error.html"><input type="button" id="browseMale" class= "browseButton" value="Male"/></a></li>
-					<li><a href="error.html"><input type="button" id="browseFemale" class= "browseButton" value="Female"/></a></li>
+<html lang="en">
+<head>
+
+	<meta charset="utf-8">
+	
+	<title>Character Note</title>
+	
+	<!--  Mobile viewport optimized: j.mp/bplateviewport -->
+	<meta name="HandheldFriendly" content="True"/>
+	<meta name="MobileOptimized" content="320"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	
+	<!-- Mobile IE needs ClearType for smoothing fonts -->
+	<meta http-equiv="cleartype" content="on"/>
+	
+	<!-- StyleSheets under here -->
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css" />
+	<link rel="stylesheet" href="css/style.css"/>
+	
+	
+	<!-- JavaScript is normally at the end of the body, except for Modernizr which enables HTML5 elements & feature detects -->
+	<script src="js/libs/modernizr.custom.min.js"></script>
+
+</head>
+<body>
+
+<!-- Index Page :: Index Page :: Index Page :: Index Page :: Index Page :: Index Page ::-->
+
+	<div data-role="page" id="front">
+	
+		<div data-role="header" data-position="fixed">
+			<h1>Character Note</h1>
+		</div>
+		
+		<div data-role="content">
+			<ul data-role="listview" data-filter="true" >
+				<li id="centerstage" data-theme="e">
+					<a href="additem.html" data-ajax="false">
+						<img id="logo" src="images/Villain.png"/>
+						<h2>Expand Your Universe!</h2>
+						<p>Create a New Character!<p>
+					</a> 
+				</li>
+				<li data-role="list-divider">Browse</li>
+					<li><a href="#alphabet">Character Name</a></li>
+					<li><a href="#alphabet" rel="external">Story Name</a></li>
+					<li><a href="#alphabet" rel="external">Character Type</a></li>
+					<li><a href="#alphabet" rel="external">Male Characters</a></li>
+					<li><a href="#alphabet" rel="external">Female Characters</a></li>
+			</ul>
+		</div>
+		
+		<div data-role="footer" data-position="fixed" data-id="front">
+			<nav data-role="navbar">
+				<ul>
+					<li><a href="#front" data-icon="home" class="ui-btn-active ui-state-persist">Home</a></li>
+					<li><a href="#info" data-icon="info">Info</a></li>
+					<li><a href="#feed" data-icon="arrow-r">Latest Creations</a></li>
 				</ul>
-		</header>
-		<script type="text/javascript" src="js/index.js"></script>
-	</body>
+			</nav>
+		</div>
+	
+	</div>
+	
+<!-- Alphabet Page -->
+	<div data-role="page" id="alphabet" data-add-back-btn="true">
+	
+		<div data-role="header" data-position="fixed">
+			<h1>Alpha-Search</h1>
+		</div>
+		
+		<div data-role="content">
+			<div class="ui-grid-d">
+				<a class="ui-block-a" href="error.html" rel="external"><button>A</button></a>
+				<a class="ui-block-b" href="error.html" rel="external"><button>B</button></a>
+				<a class="ui-block-c" href="error.html" rel="external"><button>C</button></a>
+				<a class="ui-block-d" href="error.html" rel="external"><button>D</button></a>
+				<a class="ui-block-e" href="error.html" rel="external"><button>E</button></a>
+				<a class="ui-block-a" href="error.html" rel="external"><button>F</button></a>
+				<a class="ui-block-b" href="error.html" rel="external"><button>G</button></a>
+				<a class="ui-block-c" href="error.html" rel="external"><button>H</button></a>
+				<a class="ui-block-d" href="error.html" rel="external"><button>I</button></a>
+				<a class="ui-block-e" href="error.html" rel="external"><button>J</button></a>
+				<a class="ui-block-a" href="error.html" rel="external"><button>K</button></a>
+				<a class="ui-block-b" href="error.html" rel="external"><button>L</button></a>
+				<a class="ui-block-c" href="error.html" rel="external"><button>M</button></a>
+				<a class="ui-block-d" href="error.html" rel="external"><button>N</button></a>
+				<a class="ui-block-e" href="error.html" rel="external"><button>O</button></a>
+				<a class="ui-block-a" href="error.html" rel="external"><button>P</button></a>
+				<a class="ui-block-b" href="error.html" rel="external"><button>Q</button></a>
+				<a class="ui-block-c" href="error.html" rel="external"><button>R</button></a>
+				<a class="ui-block-d" href="error.html" rel="external"><button>S</button></a>
+				<a class="ui-block-e" href="error.html" rel="external"><button>T</button></a>
+				<a class="ui-block-a" href="error.html" rel="external"><button>U</button></a>
+				<a class="ui-block-b" href="error.html" rel="external"><button>V</button></a>
+				<a class="ui-block-c" href="error.html" rel="external"><button>w</button></a>
+				<a class="ui-block-d" href="error.html" rel="external"><button>X</button></a>
+				<a class="ui-block-e" href="error.html" rel="external"><button>Y</button></a>
+				<a class="ui-block-e" href="error.html" rel="external"><button>Z</button></a>
+				
+			</div>
+		</div>
+	
+		<div data-role="footer" data-position="fixed" data-id="front">
+						<nav data-role="navbar">
+				<ul>
+					<li><a href="#front" data-icon="home">Home</a></li>
+					<li><a href="#info" data-icon="info">Info</a></li>
+					<li><a href="#feed" data-icon="arrow-r">Latest Creations</a></li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+	
+<!-- Information Page -->	
+
+	<div data-role="page" id="info" data-add-back-btn="true">
+	
+		<div data-role="header" data-position="fixed" >
+			<h1>Information</h1>
+		</div>
+		
+	<!--paragraph content-->
+		<div data-role="content">
+			<div data-role="collapsible-set">
+				<div data-role="collapsible">
+					<h3>Home</h3>
+					<p>You must be lost.<a href="#front">Start Over</a></p>
+				</div>
+				
+				<div data-role="collapsible">
+					<h3>Git Links</h3>
+					<p><a href="https://www.github.com/EricMareth/MIU1301" rel="external">Main Branch</a></p>
+					<p><a href="https://www.github.com/EricMareth/MIU1301/tree/gh-pages" rel="external">GH-pages Branch</a></p>
+				</div>
+				
+				<div data-role="collapsible" data-theme="a">
+					<h3>Bronze Edition</h3>
+					<p>You are already here, but if you want to go here, go ahead.<a href="http://ericmareth.github.com/MIU1301/bronze/"> Come Here Now</a></p>
+					<p> </a></p>
+				</div>
+	
+				<div data-role="collapsible" data-theme="e">
+					<h3>Gold Edition</h3>
+					<p>Create characters with more functionality than you can in the Bronze Edition.<a href="http://ericmareth.github.com/MIU1301/gold/"> Go There Now</a></p>
+				</div>
+	
+				<div data-role="collapsible">
+					<h3>About Me</h3>
+					<p>Well, not much to tell, I create things and keep them to myself, until I let them go, then the world is in trouble.</p>
+				</div>
+			</div>
+		</div>
+
+		<div data-role="footer" data-position="fixed" data-id="front">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#front" data-icon="home">Home</a></li>
+					<li><a href="#info" data-icon="info" class="ui-btn-active ui-state-persist">Info</a></li>
+					<li><a href="#feed" data-icon="arrow-r">Latest Creations</a></li>
+				</ul>
+			</div>
+		</div>
+	
+	</div>
+<!-- Newsfeed Page -->
+
+	<div data-role="page" id="feed" data-add-back-btn="true">
+		
+		<div data-role="header" data-position="fixed">
+			<h1> Latest Creations</h1>
+		</div>
+		
+		<div data-role="content" id="news">
+			<div data-inset="true" class="ui-grid-b">
+				<div class="ui-block-a">
+					<img src="images/Supporting.png"/>
+					<p>Samuel</p>
+					<h5>11/25/2012</h5>
+				</div>
+				<div class="ui-block-b">
+					<img src="images/Hero.png"/>
+					<p>Nestor</p>
+					<h5>11/22/2012</h5>
+				</div>
+				<div class="ui-block-c">
+					<img src="images/Supporting.png"/>
+					<p>Vir</p>
+					<h5>11/18/2012</h5>
+				</div>
+				<div class="ui-block-a">
+					<img src="images/Villain.png"/>
+					<p>Jacob</p>
+					<h5>11/15/2012</h5>
+				</div>
+				<div class="ui-block-b">
+					<img src="images/Hero.png"/>
+					<p>Bucky</p>
+					<h5>11/15/2012</h5>
+				</div>
+				<div class="ui-block-c">
+					<img src="images/Villain.png"/>
+					<p>Danala</p>
+					<h5>11/10/2012</h5>
+				</div>
+
+			</div>
+				<a href="#" data-role="button">More Characters ...(disabled)</a>
+		</div>
+		
+		<div data-role="footer" data-position="fixed" data-id="front">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#front" data-icon="home">Home</a></li>
+					<li><a href="#info" data-icon="info">Info</a></li>
+					<li><a href="#feed" data-icon="arrow-r" class="ui-btn-active ui-state-persist">Latest Creations</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+
+	<!-- JavaScript under here -->
+	<script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+
+</body>
 </html>
