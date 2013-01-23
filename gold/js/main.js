@@ -2,55 +2,11 @@
 // Eric Mareth
 // Mobile Interfaces and Usability 1301
 
-window.addEventListener("DOMContentLoaded", function(){
-	
-	function ge(x){
-		var theElement = document.getElementById(x);
-		return theElement;
-	}
-	
-	// Dynamically creates drop down list for form.
-	function whatType(){					
-		var formTag = document.getElementsByTagName("form"),
-			selectLi = ge('selectType'),
-			makeSelect = document.createElement('select');
-			makeSelect.setAttribute("id", "type");
-		for(i=0, j=charType.length; i<j; i++){
-			var makeOption = document.createElement('option');
-			var optText = charType[i];
-			makeOption.setAttribute("value", optText);
-			makeOption.innerHTML = optText;
-			makeSelect.appendChild(makeOption);
-		}
-		selectLi.appendChild(makeSelect);
-	}
-	
-	// Gets the value of the selected Gender button. 
-	function getSelectedRadio(){
-		var sexChange = document.forms[0].gender;
-		for(i=0; i<sexChange.length; i++){
-			if (sexChange[i].checked){
-				genderVal = sexChange[i].value;
-			}
-		}
-	}
-	
-	// Switches between form('off') and data('on'). 
-	function toggleControls(n){
-		switch(n){
-			case "on":
-				ge('charForm').style.display = "none";
-				ge('clearLink').style.display = "inline";
-				ge('displayData').style.display = "none";
-				ge('addChar').style.display = "inline";
-				break;
-			case "off":
-				ge('charForm').style.display = "block";
-				ge('clearLink').style.display = "inline";
-				ge('displayData').style.display = "inline";
-				ge('addChar').style.display = "none";			
-				ge('items').style.display = "none";
+$('#front').on('pageinit', function(){
+	//code needed for home page goes here
+});	
 
+<<<<<<< HEAD
 				
 				// Added to remove "Edit to Display" display echo.
 				var body = ge('body');
@@ -253,89 +209,57 @@ window.addEventListener("DOMContentLoaded", function(){
 				var txt = document.createElement('li');
 				txt.innerHTML = messageAry[i];
 				errMsg.appendChild(txt);
+=======
+var characterBio = function(data){
+	console.log(data);
+};		
+
+$('#newitem').on('pageinit', function(){
+
+		var basicInfo = $('#basicinfo'),
+			errorslink = $('#errorslink')
+		;
+		basicInfo.validate({
+			invalidHandler: function(form, validator) {
+				errorslink.click();
+				var html = '';
+				for(var key in validator.submitted){
+					var label = $('label[for^="'+ key +'"]').not('[generated]');
+					var legend = label.closest('fieldset').find('.ui-controlgroup-label');
+					var fieldName = legend.length ? legend.text() : label.text();
+					html += '<li>'+ fieldName +'</li>';
+				};
+				$("#charactererrors ul").html(html);
+			},
+			submitHandler: function() {
+				var data = basicInfo.serializeArray();
+				characterBio(data); 
+>>>>>>> master
 			}
-			 e.preventDefault();
-			return false;
-		}else{
-			storeData(this.key);
-			toggleControls("ready");
-		}
-	}
+		});
 	
-		
-	// Generates random key and attaches it to the data object.
-	function storeData(key){
-		if(!key){
-			var id			= Math.floor(Math.random()*10000001);
-		}else{
-			id = key;
-		};
-		getSelectedRadio();
-		var item		={};
-			item.name		=["Name:", ge('charName').value];
-			item.story		=["Story:", ge('taleName').value];
-			item.land		=["Land:", ge('land').value];
-			item.town		=["Town:", ge('town').value];
-			item.gender		=["Sex:", genderVal];
-			item.age		=["Age:", ge('age').value];
-			item.type		=["Character Type:", ge('type').value];
-			item.details	=["Details:", ge('details').value];
-			item.created	=["Birthdate:", ge('created').value];
-		
-		localStorage.setItem(id, JSON.stringify(item));
-		alert("It's ALIVE!!!!!!!! ALIIIIVE!!!!!");
-		
-	}
-	
-	// *ADDED: My EXTRA CREDIT function to add a range display.
-	function ageNum(){
-		var	ageVal = ageData.value,
-			field = ge('charAge');
-		field.innerHTML = ageVal;
-	}
-	
-	// *ADDED: Activates disabled 'Town' field for population.
-	function townField(){
-		var townFld = ge('town'),
-			townLbl = ge('townTxt'),
-			newTxt = "Town?: ",
-			dfltText = "Town (disabled): ",
-			place = townFld.setAttribute("placeholder", "Oz, Neverland, etc.");			
-		if(ge('land').value !== ""){
-			townLbl.style.color = "black";
-			townLbl.innerHTML = newTxt;
-			townFld.removeAttribute("disabled", "disabled");
-		}else{
-			// Returns 'town' field to original state if user deletes 'land' field data.
-			townLbl.style.color = "gray";
-			townLbl.innerHTML = dfltText;
-			townFld.setAttribute("disabled", "disabled");
-			townFld.value = "";
-			place;
-		}
-	}
-	
-	
-	var charType = ["|-Choose Character Type-|", "Hero", "Side-kick", "Love-Interest", "Mentor", "Villain", "Henchman", "Sub-Villain", "Supporting", "Walk-On", "Off-Screen"];
-	var	errMsg  = ge('errors');
-
-	whatType();
-
-	var displayData = ge('displayData');
-	displayData.addEventListener("click", getData);
-	var clearLink = ge('clearLink');
-	clearLink.addEventListener("click", clearLocal);
-	var save = ge('saveChar');
-	save.addEventListener("click", validate);
-	
-	// *ADDED: My EXTRA CREDIT to add a range display.
-	var ageData = ge('age');
-	ageNum();
-	ageData.addEventListener("change", ageNum);	
-	
-	// *ADDED: Checks 'Land' field to determine active state of townField().
-	var askTown = ge('land'); 
-	var check = askTown.addEventListener("keypress", townField);
-	askTown.addEventListener("blur", townField);
+	//any other code needed for addItem page goes here
 	
 });
+
+//The functions below can go inside or outside the pageinit function for the page in which it is needed.
+
+var autofillData = function (){
+	 
+};
+
+var getData = function(){
+
+};
+
+var storeData = function(data){
+	
+}; 
+
+var	deleteItem = function (){
+			
+};
+					
+var clearLocal = function(){
+
+};

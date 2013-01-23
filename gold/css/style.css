@@ -11,10 +11,19 @@ img{
 	margin: 10px 0px;
 }
 
+label.error{
+	display: block;
+	color: maroon;
+	margin: 10px 0px;
+}
+
+<<<<<<< HEAD
+=======
 *{
 	font-family: "Trebuchet MS";
 }
 
+>>>>>>> master
 html {
 	background-image: -webkit-gradient(linear,
 		0% 0%, 
@@ -27,9 +36,19 @@ html {
 	
 }
 
+<<<<<<< HEAD
 li{
 	list-style: none;
 	margin-left: -35px;
+=======
+ol > li{
+	list-style: none;
+	margin-left: -35px;
+}
+
+#errorslink{
+	display: none;
+>>>>>>> master
 }
 
 #newEntry{
