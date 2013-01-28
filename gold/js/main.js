@@ -30,11 +30,7 @@ $('#newitem').on('pageinit', function(){
 			},
 			submitHandler: function() {
 				var data = basicInfo.serializeArray();
-<<<<<<< HEAD
-				characterBio(data); 
-=======
 				storeData(data); 
->>>>>>> master
 			}
 		});
 	
