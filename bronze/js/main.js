@@ -118,7 +118,7 @@ window.addEventListener("DOMContentLoaded", function(){
 		imageLi.appendChild(newImg);
 	} 
 	
-	function autoFillData(){									// Auto populates a default character.
+	function autoFillData(){									// Auto populates a key number.
 		for(var n in json){
 			var id = Math.floor(Math.random()*10000001);
 			localStorage.setItem(id, JSON.stringify(json[n]));

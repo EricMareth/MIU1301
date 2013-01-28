@@ -30,7 +30,7 @@ $('#newitem').on('pageinit', function(){
 			},
 			submitHandler: function() {
 				var data = basicInfo.serializeArray();
-				characterBio(data); 
+				storeData(data); 
 			}
 		});
 	
@@ -40,8 +40,8 @@ $('#newitem').on('pageinit', function(){
 
 //The functions below can go inside or outside the pageinit function for the page in which it is needed.
 
-var autofillData = function (){
-	 
+var autofillData = function (){	
+
 };
 
 var getData = function(){
@@ -49,11 +49,28 @@ var getData = function(){
 };
 
 var storeData = function(data){
+	//if(!key){
+		var id			= Math.floor(Math.random()*10000001);
+	//}else{
+	//	id = key;
+	//};
+	var item		={};
+		item.name		=["Name:", $('#charname').val()];
+		item.story		=["Story:", $('#charstory').val()];
+		item.land		=["Land:", $('#charland').val()];
+		item.town		=["Town:", $('#chartown').val()];
+		item.gender		=["Sex:", $('input:radio[name=genderpick]:checked').val()];
+		item.age		=["Age:", $('#agerange').val()];
+		item.type		=["Character Type:", $('#chartype').val()];
+		item.details	=["Details:", $('#otherinfo').val()];
 	
+	localStorage.setItem(id, JSON.stringify(item));
+	console.log(localStorage);
+	alert("It's ALIVE!!!!!!!! ALIIIIVE!!!!!");
 }; 
 
 var	deleteItem = function (){
-			
+
 };
 					
 var clearLocal = function(){
