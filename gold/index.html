@@ -21,8 +21,8 @@
 	
 	<!-- StyleSheets under here -->
 	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css" />
+	<link rel="stylesheet" href="css/CN3.min.css"/>	
 	<link rel="stylesheet" href="css/style.css"/>
-	
 	
 	<!-- JavaScript is normally at the end of the body, except for Modernizr which enables HTML5 elements & feature detects -->
 	<script src="js/libs/modernizr.custom.min.js"></script>
@@ -32,36 +32,44 @@
 
 <!-- Index Page :: Index Page :: Index Page :: Index Page :: Index Page :: Index Page ::-->
 
-	<div data-role="page" id="front">
+	<div data-role="page" id="front" data-theme="b">
 	
-		<div data-role="header" data-position="fixed" data-theme="e">
+		<div data-role="header" data-position="fixed" data-theme="b">
+			<a href="#" data-role="none"><img id="headerimage" src="images/CNLogoSM.png"/></a>
 			<h1>Character Note</h1>
 		</div>
 		
 		<div data-role="content">
-			<ul data-role="listview" data-filter="true" >
-				<li id="centerstage">
+			<ul data-role="listview" >
+				<li id="centerstage" data-theme="a" data-icon="RightIcon">
 					<a href="#newitem">
-						<img src="images/Villain.png"/>
-						<h2>Expand Your Universe!</h2>
-						<p>Create a New Character!<p>
-					</a> 
+						<img id="logo" src="images/Parchment.png" class="listicon"/>
+						<h1>Expand Your</h1>
+						<h1>Universe</h1>
+						<p style="font-weight: bold">Create a New Character!</p>
+					</a>
 				</li>
-				<li data-role="list-divider">Browse</li>
-					<li><a href="error.html" rel="external">Character Name</a></li>
-					<li><a href="error.html" rel="external">Story Name</a></li>
-					<li><a href="error.html" rel="external">Character Type</a></li>
-					<li><a href="error.html" rel="external">Male Characters</a></li>
-					<li><a href="error.html" rel="external">Female Characters</a></li>
+				<div data-role="collapsible-set">
+					<div data-role="collapsible">
+						<h3>Browse</h3>
+							<ul data-role="listview" data-filter="true">
+								<li data-icon="RightIcon" ><a href="#error404" data-transition="flip">Character Name</a></li>
+								<li data-icon="RightIcon" ><a href="#error404" data-transition="flip">Story Name</a></li>
+								<li data-icon="RightIcon" ><a href="#error404" data-transition="flip">Character Type</a></li>
+								<li data-icon="RightIcon" ><a href="#error404" data-transition="flip">Male Characters</a></li>
+								<li data-icon="RightIcon" ><a href="#error404" data-transition="flip">Female Characters</a></li>
+							</ul>
+					</div>
+				</div>
 			</ul>
 		</div>
 		
-		<div data-role="footer" data-position="fixed" data-id="front">
+		<div data-role="footer" data-position="fixed" data-id="front" >
 			<nav data-role="navbar">
 				<ul>
-					<li><a href="#front" data-icon="home" class="ui-btn-active ui-state-persist">Home</a></li>
-					<li><a href="#info" data-icon="info">Info</a></li>
-					<li><a href="#feed" data-icon="arrow-r">Latest Creations</a></li>
+					<li><a href="#front" data-icon="HomeIcon" class="ui-btn-active ui-state-persist">Home</a></li>
+					<li><a href="#info" data-icon="CreateIcon" data-transition="flow">Info</a></li>
+					<li><a href="#feed" data-icon="DownIcon" data-transition="slideup">Latest Creations</a></li>
 				</ul>
 			</nav>
 		</div>
@@ -72,31 +80,31 @@
 
 <!-- New Add Item Page-->
 
-	<div data-role="page" id="newitem" data-add-back-btn="true">
-		<div data-role="header" data-position="fixed" data-theme="e">
+	<div data-role="page" id="newitem" data-theme="b">
+		<div data-role="header" data-position="fixed" data-theme="b">
+			<a href="#front" data-role="none"><img id="headerimage" src="images/CNLogoSM.png"/></a>
 			<h1>New Character</h1>
 		</div>
 		<div data-role="content">
 			<form id="basicinfo">
 				<div data-role="fieldcontain">
-					<h5>* indicates a required field.</h5>
 					<label for="charname">* Character Name</label>
-					<input type="text" name="charname" id="charname" class="required" value placeholder="Fuzzy The Great"/>
+					<input type="text" name="charname" id="charname" class="required" value placeholder="Fuzzy The Great" data-theme="a"/>
 				</div>
-				
+				<h5 id="required">* indicates a required field.</h5>
 				<div data-role="fieldcontain">
 					<label for="charstory">* Story Name</label>
-					<input type="text" name="charstory" id="charstory" class="required" value placeholder="Fuzzy's Day Out"/>
+					<input type="text" name="charstory" id="charstory" class="required" value placeholder="Fuzzy's Day Out" data-theme="a"/>
 				</div>
 				
 				<div data-role="fieldcontain">
 					<label for="charland">Land</label>
-					<input type="text" name="charland" id="charland" value placeholder="Fuzziland"/>
+					<input type="text" name="charland" id="charland" value placeholder="Fuzziland" data-theme="a"/>
 				</div>
 				
-				<div data-role="fieldcontain">
-					<label for="chartown">Town</label>
-					<input type="text" name="chartown" id="chartown" value placeholder="Fuzz Ville"/>
+				<div data-role="fieldcontain" id="town">
+					<label for="chartown" >Town</label>
+					<input type="text" name="chartown" id="chartown" value placeholder="Fuzz Ville" data-theme="a"/>
 				</div>
 								
 				
@@ -116,7 +124,7 @@
 	<!--Age Range Slider-->
 				<div data-role="fieldcontain">
 					<label for="agerange">Age Character Looks</label>
-					<input type="range" name="agerange" id="agerange" value="35" min="5" max="200" step="5" data-highlight="true" />
+					<input type="range" name="agerange" id="agerange" value="35" min="5" max="200" step="5" data-highlight="true" data-theme="a"/>
 				</div>
 				
 	<!--Character Type Drop-down-->
@@ -146,11 +154,11 @@
 	<!--Character Details Text Area-->
 				<div data-role="fieldcontain">
 					<label for="otherinfo">Other Details About Your Character</label>
-					<textarea id="otherinfo" value placeholder="Really, really fuzzy and heroic."/></textarea>
+					<textarea id="otherinfo" value placeholder="Really, really fuzzy and heroic." data-theme="a"/></textarea>
 				</div>
 								
 				<div data-role="fieldcontain">
-					<input href="#front" type="submit" value="Create!" data-theme="b" data-inline="true"/>
+					<input href="#front" type="submit" value="Create!" data-theme="a" data-inline="true"/>
 					<a href="#front">Cancel</a>
 				</div>
 				
@@ -160,28 +168,23 @@
 		</div>
 	</div>
 	
-	<div data-role="dialog" id="charactererrors">
-	
+	<div data-role="dialog" id="charactererrors" style="margin: -40px 0px">
 		<div data-role="header" data-position="fixed">
 			<h1>Tell us more...</h1>
 		</div>
-		
 		<div data-role="content">
 			<ul id="errorlist">
 				<li>TEST</li>
 			</ul>
 		</div>
 	</div>
-	
-	<!--Need to add calendar.-->
-
-
 
 <!-- Information Page -->	
 
-	<div data-role="page" id="info" data-add-back-btn="true">
+	<div data-role="page" id="info" data-theme="b">
 	
-		<div data-role="header" data-position="fixed" data-theme="e">
+		<div data-role="header" data-position="fixed" data-theme="b">
+			<a href="#front" data-role="none"><img id="headerimage" src="images/CNLogoSM.png"/></a>
 			<h1>Information</h1>
 		</div>
 		
@@ -190,7 +193,7 @@
 			<div data-role="collapsible-set">
 				<div data-role="collapsible">
 					<h3>Home</h3>
-					<p>You must be lost.<a href="#front">Start Over</a></p>
+					<p>You must be lost.<a href="#front" data-transition="flow">Start Over</a></p>
 				</div>
 				
 				<div data-role="collapsible">
@@ -219,9 +222,9 @@
 		<div data-role="footer" data-position="fixed" data-id="front">
 			<div data-role="navbar">
 				<ul>
-					<li><a href="#front" data-icon="home">Home</a></li>
-					<li><a href="#info" data-icon="info" class="ui-btn-active ui-state-persist">Info</a></li>
-					<li><a href="#feed" data-icon="arrow-r">Latest Creations</a></li>
+					<li><a href="#front" data-icon="HomeIcon" data-transition="flow">Home</a></li>
+					<li><a href="#info" data-icon="CreateIcon" class="ui-btn-active ui-state-persist">Info</a></li>
+					<li><a href="#feed" data-icon="DownIcon" data-transition="slideup">Latest Creations</a></li>
 				</ul>
 			</div>
 		</div>
@@ -229,52 +232,65 @@
 	</div>
 
 
+<!--404 Error Dialog-->
 
+	<div data-role="dialog" id="error404" data-theme="b" style="margin: -40px 0px">
+		<div data-role="header" data-position="fixed" data-theme="b">
+			<h1>Error 404</h1>
+		</div>
+	
+		<div data-role="content" id="errtext">
+			<img src="images/CNLogoM.png" class="listicon"/>
+			<h1>Error 404</h1>
+			<p>We seem to be headed the wrong direction.  Move back one space and roll again.</>
+		</div>
+	</div> 
 
 <!-- Newsfeed Page -->
 
-	<div data-role="page" id="feed" data-add-back-btn="true">
+	<div data-role="page" id="feed" data-theme="b">
 		
-		<div data-role="header" data-position="fixed" data-theme="e">
+		<div data-role="header" data-position="fixed" data-theme="b">
+			<a href="#front" data-role="none"><img id="headerimage" src="images/CNLogoSM.png"/></a>
 			<h1> Latest Creations</h1>
 		</div>
 		
 		<div data-role="content" id="news">
 			<ul data-role="listview">
 				<li>
-					<img src="images/Supporting.png"/>
+					<img src="images/Supporting.png" class="listicon"/>
 					<h3>Samuel</h3>
 					<p>Danala's only love, and Jacob's father.</p>
 					<p>Entered: 11/22/2012</p>
 				</li>
 				<li>
-					<img src="images/Hero.png"/>
+					<img src="images/Hero.png" class="listicon"/>
 					<h3>Nestor</h3>
 					<p>Sea creature with a fear of deep water.</p>
 					<p>Entered: 11/18/2012</p>
 				</li>
 				<li>
-					<img src="images/Supporting.png"/>
+					<img src="images/Supporting.png" class="listicon"/>
 					<h3>Vir</h3>
 					<p>Leader of the horde that slaughtered the people of...</p>
 					<p>Entered: 11/15/2012</p>
 				</li>
 				<li>
-					<img src="images/Villain.png"/>
+					<img src="images/Villain.png" class="listicon"/>
 					<h3>Jacob</h3>
 					<p>Danala's son.</p>
 					<p>Entered: 11/8/2012</p>
 				</li>
-				<li><a href="#">More Characters ...(disabled)</a></li>
+
 			</ul>
 		</div>
 		
 		<div data-role="footer" data-position="fixed" data-id="front">
 			<div data-role="navbar">
 				<ul>
-					<li><a href="#front" data-icon="home">Home</a></li>
-					<li><a href="#info" data-icon="info">Info</a></li>
-					<li><a href="#feed" data-icon="arrow-r" class="ui-btn-active ui-state-persist">Latest Creations</a></li>
+					<li><a href="#front" data-icon="HomeIcon" data-transition="flow">Home</a></li>
+					<li><a href="#info" data-icon="CreateIcon" data-transition="flow">Info</a></li>
+					<li><a href="#feed" data-icon="DownIcon" class="ui-btn-active ui-state-persist">Latest Creations</a></li>
 				</ul>
 			</div>
 		</div>

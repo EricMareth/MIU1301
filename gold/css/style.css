@@ -2,13 +2,64 @@
 by Eric Mareth
 Mobile Interfaces and Usability 1301 */
 
+*{
+	font-family: "Trebuchet MS";
+}
 
-img{
-	margin: 15px 0px 0px 10px;
+.listicon{
+	margin: 20px 0px 0px 10px;
+}
+
+.ui-icon-HomeIcon{
+	background-image: url("images/HomeIcon.png");
+	background-size: 18px 18px;
+}
+
+.ui-icon-DownIcon{
+	background-image: url("images/DownIcon.png");
+	background-size: 18px 18px;
+}
+
+.ui-icon-CreateIcon{
+	background-image: url("images/CreateIcon.png");
+	background-size: 18px 18px;
+}
+
+.ui-icon-RightIcon{
+	background-image: url("images/RightIcon.png");
+	background-size: 18px 18px;
+}
+
+
+li h1{
+	color: red;
+	font-size: 30px;
+}
+
+a h1:last-of-type{
+	font-size: 30px;
+	margin: -10px 0px 15px 0px;
 }
 
 #centerstage{
-	margin: 10px 0px;
+	margin: 20px 7px;
+	display: block;
+	border-radius: 10px;
+}
+
+#headerimage{
+	float: left;
+	display: inline;
+	margin: -10px 0px;
+}
+
+#required{
+	margin: 0px 0px;
+	text-align: right;
+}
+
+#errorslink{
+	display: none;
 }
 
 label.error{
@@ -17,8 +68,8 @@ label.error{
 	margin: 10px 0px;
 }
 
-*{
-	font-family: "Trebuchet MS";
+#errtext{
+	color: red;
 }
 
 html {
@@ -38,10 +89,6 @@ ol > li{
 	margin-left: -35px;
 }
 
-#errorslink{
-	display: none;
-}
-
 #newEntry{
 	font-size: 14px;
 }
@@ -52,10 +99,6 @@ ol > li{
 	border-radius: 10px;
 	margin: 10px 0px;
 	background: ghostWhite;
-}
-
-li > label[for=town]{
-	color: gray;
 }
 
 div > ol{
@@ -99,13 +142,5 @@ div > p {
 	color: white;
 	background: steelBlue;
 	font-weight: bold;
-}
-
-.cta {
-	text-align: right;
-	background: url(Villain.png) no-repeat scroll 20px 60%, lightsteelBlue;
-	margin: 0px 0px 8px 0px;
-	padding: 0px 8px 20px 0px;
-	border-radius: 8px;	
 }
 
